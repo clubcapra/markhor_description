@@ -8,6 +8,7 @@ Panels:
         - /Status1
         - /RobotModel1
         - /RobotModel1/Links1
+        - /RobotModel1/Links1/markhor_link_arm_root1
         - /RobotModel1/Links1/markhor_link_base1
         - /RobotModel1/Links1/root1
       Splitter Ratio: 0.5
@@ -68,7 +69,7 @@ Visualization Manager:
         Link Tree Style: Links in Alphabetic Order
         markhor_link_arm_root:
           Alpha: 1
-          Show Axes: false
+          Show Axes: true
           Show Trail: false
         markhor_link_base:
           Alpha: 1
@@ -95,6 +96,10 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        markhor_link_front_cam:
+          Alpha: 1
+          Show Axes: true
+          Show Trail: false
         markhor_link_gb_fl:
           Alpha: 1
           Show Axes: false
@@ -115,6 +120,10 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        markhor_link_rear_cam:
+          Alpha: 1
+          Show Axes: true
+          Show Trail: false
         root:
           Alpha: 1
           Show Axes: false
@@ -153,25 +162,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 3.3659191131591797
+      Distance: 2.98585844039917
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0
-        Y: 0
-        Z: 0
+        X: 0.013113764114677906
+        Y: -0.1124638244509697
+        Z: -0.1482720673084259
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.5203987956047058
+      Pitch: 0.7003985047340393
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 0.6003863215446472
+      Yaw: 0.6653898358345032
     Saved: ~
 Window Geometry:
   Displays:
