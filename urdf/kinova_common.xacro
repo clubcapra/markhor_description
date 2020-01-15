@@ -15,6 +15,7 @@
   xmlns:physics="http://playerstage.sourceforge.net/gazebo/xmlschema/#physics" 
   xmlns:xacro="http://www.ros.org/wiki/xacro">
 
+  <xacro:include filename="$(find markhor_description)/urdf/markhor_inertial.xacro" />
   <xacro:include filename="$(find markhor_description)/urdf/materials.xacro"/>
 
   <xacro:macro name="kinova_link" params="link_name link_mesh link_origin_xyz:='0 0 0' link_origin_rpy:='0 0 0' link_material:='red' has_collision_mesh:=false">
@@ -37,6 +38,7 @@
         </geometry>
         <origin xyz="${link_origin_xyz}" rpy="${link_origin_rpy}"/>
       </collision>
+      <xacro:markhor_inertial link_name="${link_name}"/>
     </link>
   </xacro:macro>
 
