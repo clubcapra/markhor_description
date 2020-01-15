@@ -8,9 +8,6 @@ Panels:
         - /Status1
         - /RobotModel1
         - /RobotModel1/Links1
-        - /RobotModel1/Links1/markhor_link_arm_root1
-        - /RobotModel1/Links1/markhor_link_base1
-        - /RobotModel1/Links1/root1
       Splitter Ratio: 0.5
     Tree Height: 719
   - Class: rviz/Selection
@@ -67,6 +64,35 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
+        laser:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        laser_mount_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        left_inner_finger:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_inner_knuckle:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_outer_finger:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_outer_knuckle:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         markhor_link_arm_root:
           Alpha: 1
           Show Axes: true
@@ -120,14 +146,90 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        markhor_link_lidar:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
         markhor_link_rear_cam:
           Alpha: 1
           Show Axes: true
           Show Trail: false
-        root:
+        markhor_root:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+        ovis_end_effector:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        ovis_link_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        ovis_link_2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        ovis_link_3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        ovis_link_4:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        ovis_link_5:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        ovis_link_6:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        ovis_link_base:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        ovis_link_tool0:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        ovis_root:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        right_inner_finger:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_inner_knuckle:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_outer_finger:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_outer_knuckle:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        robotiq_arg2f_base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
       Name: RobotModel
       Robot Description: robot_description
       TF Prefix: ""
@@ -138,7 +240,7 @@ Visualization Manager:
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: root
+    Fixed Frame: markhor_root
     Frame Rate: 30
   Name: root
   Tools:
@@ -162,25 +264,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 2.98585844039917
+      Distance: 3.187849283218384
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.013113764114677906
-        Y: -0.1124638244509697
-        Z: -0.1482720673084259
+        X: -0.0014956924133002758
+        Y: -0.10129526257514954
+        Z: -0.14161045849323273
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.7003985047340393
+      Pitch: 0.47039875388145447
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 0.6653898358345032
+      Yaw: 0.7653893232345581
     Saved: ~
 Window Geometry:
   Displays:

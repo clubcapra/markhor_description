@@ -139,6 +139,13 @@
     <xacro:property name="joint_arm_root_origin_xyz" value="0.17394875 0 -0.12291060" />
     <xacro:property name="joint_arm_root_origin_rpy" value="${pi} 0 0" />
 
+    <!-- LiDAR -->
+    <xacro:property name="joint_lidar" value="lidar" />
+    <xacro:property name="joint_lidar_type" value="fixed" />
+    <xacro:property name="joint_lidar_axis_xyz" value="0 0 0" />
+    <xacro:property name="joint_lidar_origin_xyz" value="0.32034017 0 -0.1393156" />
+    <xacro:property name="joint_lidar_origin_rpy" value="${pi} 0 0" />
+
     <xacro:macro name="markhor" params="base_parent prefix:=markhor">
 
         <xacro:kinova_link link_name="${prefix}_link_base" link_mesh="${link_base_mesh}" link_origin_rpy="${link_base_origin_rpy}"/>
@@ -180,6 +187,10 @@
         <!-- Anchor for a robotic arm -->
         <xacro:kinova_virtual_link link_name="${prefix}_link_arm_root"/>
         <xacro:kinova_virtual_joint joint_name="${prefix}_joint_arm_root" type="${joint_arm_root_type}" parent="${prefix}_link_base" child="${prefix}_link_arm_root" joint_axis_xyz="${joint_arm_root_axis_xyz}" joint_origin_xyz="${joint_arm_root_origin_xyz}" joint_origin_rpy="${joint_arm_root_origin_rpy}" joint_lower_limit="0" joint_upper_limit="0"/>
+
+        <!-- Anchor for the LiDAR -->
+        <xacro:kinova_virtual_link link_name="${prefix}_link_lidar"/>
+        <xacro:kinova_virtual_joint joint_name="${prefix}_joint_lidar" type="${joint_lidar_type}" parent="${prefix}_link_base" child="${prefix}_link_lidar" joint_axis_xyz="${joint_lidar_axis_xyz}" joint_origin_xyz="${joint_lidar_origin_xyz}" joint_origin_rpy="${joint_lidar_origin_rpy}" joint_lower_limit="0" joint_upper_limit="0"/>
 
     </xacro:macro>
 
