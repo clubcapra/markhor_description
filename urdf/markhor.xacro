@@ -11,10 +11,12 @@
     <xacro:property name="link_gb_fr_origin_rpy" value="0 0 0"/>
     <xacro:property name="link_gb_rl_mesh" value="mk_gb_fr"/>
     <xacro:property name="link_gb_rr_mesh" value="mk_gb_fl"/>
+    <xacro:property name="link_gb_material" value="grey"/>
     <xacro:property name="link_flip_fl_mesh" value="mk_flip"/>
     <xacro:property name="link_flip_fr_mesh" value="mk_flip"/>
     <xacro:property name="link_flip_rl_mesh" value="mk_flip"/>
     <xacro:property name="link_flip_rr_mesh" value="mk_flip"/>
+    <xacro:property name="link_flip_material" value="black"/>
 
     <xacro:property name="joint_base" value="joint_base"/>
     <xacro:property name="joint_base_type" value="fixed"/>
@@ -151,29 +153,29 @@
         <xacro:kinova_link link_name="${prefix}_link_base" link_mesh="${link_base_mesh}" link_origin_rpy="${link_base_origin_rpy}"/>
         <xacro:kinova_joint joint_name="${prefix}_joint_base" type="${joint_base_type}" parent="${base_parent}" child="${prefix}_link_base" joint_axis_xyz="${joint_base_axis_xyz}" joint_origin_xyz="${joint_base_origin_xyz}" joint_origin_rpy="${joint_base_origin_rpy}" joint_lower_limit="0" joint_upper_limit="0" joint_velocity_limit="0" joint_torque_limit="0" fixed="true"/>
 
-        <xacro:kinova_link link_name="${prefix}_link_gb_fl" link_mesh="${link_gb_fl_mesh}" />
+        <xacro:kinova_link link_name="${prefix}_link_gb_fl" link_mesh="${link_gb_fl_mesh}" link_material="${link_gb_material}"/>
         <xacro:kinova_joint joint_name="${prefix}_joint_gb_fl" type="${joint_gb_fl_type}" parent="${prefix}_link_base" child="${prefix}_link_gb_fl" joint_axis_xyz="${joint_gb_fl_axis_xyz}" joint_origin_xyz="${joint_gb_fl_origin_xyz}" joint_origin_rpy="${joint_gb_fl_origin_rpy}" joint_lower_limit="0" joint_upper_limit="0" joint_velocity_limit="0" joint_torque_limit="0" fixed="true"/>
 
-        <xacro:kinova_link link_name="${prefix}_link_gb_fr" link_mesh="${link_gb_fr_mesh}" link_origin_rpy="${link_gb_fr_origin_rpy}"/>
+        <xacro:kinova_link link_name="${prefix}_link_gb_fr" link_mesh="${link_gb_fr_mesh}" link_origin_rpy="${link_gb_fr_origin_rpy}" link_material="${link_gb_material}"/>
         <xacro:kinova_joint joint_name="${prefix}_joint_gb_fr" type="${joint_gb_fr_type}" parent="${prefix}_link_base" child="${prefix}_link_gb_fr" joint_axis_xyz="${joint_gb_fr_axis_xyz}" joint_origin_xyz="${joint_gb_fr_origin_xyz}" joint_origin_rpy="${joint_gb_fr_origin_rpy}" joint_lower_limit="0" joint_upper_limit="0" joint_velocity_limit="0" joint_torque_limit="0" fixed="true"/>
 
-        <xacro:kinova_link link_name="${prefix}_link_gb_rl" link_mesh="${link_gb_rl_mesh}" />
+        <xacro:kinova_link link_name="${prefix}_link_gb_rl" link_mesh="${link_gb_rl_mesh}" link_material="${link_gb_material}"/>
         <xacro:kinova_joint joint_name="${prefix}_joint_gb_rl" type="${joint_gb_rl_type}" parent="${prefix}_link_base" child="${prefix}_link_gb_rl" joint_axis_xyz="${joint_gb_rl_axis_xyz}" joint_origin_xyz="${joint_gb_rl_origin_xyz}" joint_origin_rpy="${joint_gb_rl_origin_rpy}" joint_lower_limit="0" joint_upper_limit="0" joint_velocity_limit="0" joint_torque_limit="0" fixed="true"/>
 
-        <xacro:kinova_link link_name="${prefix}_link_gb_rr" link_mesh="${link_gb_rr_mesh}" />
+        <xacro:kinova_link link_name="${prefix}_link_gb_rr" link_mesh="${link_gb_rr_mesh}" link_material="${link_gb_material}"/>
         <xacro:kinova_joint joint_name="${prefix}_joint_gb_rr" type="${joint_gb_rr_type}" parent="${prefix}_link_base" child="${prefix}_link_gb_rr" joint_axis_xyz="${joint_gb_rr_axis_xyz}" joint_origin_xyz="${joint_gb_rr_origin_xyz}" joint_origin_rpy="${joint_gb_rr_origin_rpy}" joint_lower_limit="0" joint_upper_limit="0" joint_velocity_limit="0" joint_torque_limit="0" fixed="true"/>
 
         <!-- flipper angle frame -->
-        <xacro:kinova_link link_name="${prefix}_link_flip_fl" link_mesh="${link_flip_fl_mesh}"/>
+        <xacro:kinova_link link_name="${prefix}_link_flip_fl" link_mesh="${link_flip_fl_mesh}" link_material="${link_flip_material}"/>
         <xacro:kinova_joint joint_name="${prefix}_joint_flip_fl" type="${joint_flip_fl_type}" parent="${prefix}_link_gb_fl" child="${prefix}_link_flip_fl" joint_axis_xyz="${joint_flip_fl_axis_xyz}" joint_origin_xyz="${joint_flip_fl_origin_xyz}" joint_origin_rpy="${joint_flip_fl_origin_rpy}" joint_lower_limit="${joint_flip_fl_lower_limit}" joint_upper_limit="${joint_flip_fl_upper_limit}" joint_velocity_limit="${joint_flip_fl_velocity_limit}" joint_torque_limit="${joint_flip_fl_torque_limit}"/>
 
-        <xacro:kinova_link link_name="${prefix}_link_flip_fr" link_mesh="${link_flip_fr_mesh}"/>
+        <xacro:kinova_link link_name="${prefix}_link_flip_fr" link_mesh="${link_flip_fr_mesh}" link_material="${link_flip_material}"/>
         <xacro:kinova_joint joint_name="${prefix}_joint_flip_fr" type="${joint_flip_fr_type}" parent="${prefix}_link_gb_fr" child="${prefix}_link_flip_fr" joint_axis_xyz="${joint_flip_fr_axis_xyz}" joint_origin_xyz="${joint_flip_fr_origin_xyz}" joint_origin_rpy="${joint_flip_fr_origin_rpy}" joint_lower_limit="${joint_flip_fr_lower_limit}" joint_upper_limit="${joint_flip_fr_upper_limit}" joint_velocity_limit="${joint_flip_fr_velocity_limit}" joint_torque_limit="${joint_flip_fr_torque_limit}"/>
 
-        <xacro:kinova_link link_name="${prefix}_link_flip_rl" link_mesh="${link_flip_rl_mesh}"/>
+        <xacro:kinova_link link_name="${prefix}_link_flip_rl" link_mesh="${link_flip_rl_mesh}" link_material="${link_flip_material}"/>
         <xacro:kinova_joint joint_name="${prefix}_joint_flip_rl" type="${joint_flip_rl_type}" parent="${prefix}_link_gb_rl" child="${prefix}_link_flip_rl" joint_axis_xyz="${joint_flip_rl_axis_xyz}" joint_origin_xyz="${joint_flip_rl_origin_xyz}" joint_origin_rpy="${joint_flip_rl_origin_rpy}" joint_lower_limit="${joint_flip_rl_lower_limit}" joint_upper_limit="${joint_flip_rl_upper_limit}" joint_velocity_limit="${joint_flip_rl_velocity_limit}" joint_torque_limit="${joint_flip_rl_torque_limit}"/>
 
-        <xacro:kinova_link link_name="${prefix}_link_flip_rr" link_mesh="${link_flip_rr_mesh}"/>
+        <xacro:kinova_link link_name="${prefix}_link_flip_rr" link_mesh="${link_flip_rr_mesh}" link_material="${link_flip_material}"/>
         <xacro:kinova_joint joint_name="${prefix}_joint_flip_rr" type="${joint_flip_rr_type}" parent="${prefix}_link_gb_rr" child="${prefix}_link_flip_rr" joint_axis_xyz="${joint_flip_rr_axis_xyz}" joint_origin_xyz="${joint_flip_rr_origin_xyz}" joint_origin_rpy="${joint_flip_rr_origin_rpy}" joint_lower_limit="${joint_flip_rr_lower_limit}" joint_upper_limit="${joint_flip_rr_upper_limit}" joint_velocity_limit="${joint_flip_rr_velocity_limit}" joint_torque_limit="${joint_flip_rr_torque_limit}"/>
         
         <!-- Anchor for the front camera -->

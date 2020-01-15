@@ -15,13 +15,16 @@
   xmlns:physics="http://playerstage.sourceforge.net/gazebo/xmlschema/#physics" 
   xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <xacro:macro name="kinova_link" params="link_name link_mesh link_origin_xyz:='0 0 0' link_origin_rpy:='0 0 0' has_collision_mesh:=false">
+  <xacro:include filename="$(find markhor_description)/urdf/materials.xacro"/>
+
+  <xacro:macro name="kinova_link" params="link_name link_mesh link_origin_xyz:='0 0 0' link_origin_rpy:='0 0 0' link_material:='red' has_collision_mesh:=false">
     <link name="${link_name}">
       <visual>
         <geometry>
           <mesh filename="package://markhor_description/meshes/visual/${link_mesh}.stl"/>
         </geometry>
         <origin xyz="${link_origin_xyz}" rpy="${link_origin_rpy}"/>
+        <material name="${link_material}"/>
       </visual>
       <collision>
         <geometry>
