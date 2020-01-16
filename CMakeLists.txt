@@ -11,7 +11,6 @@ find_package(catkin REQUIRED COMPONENTS
   urdf
   xacro
   sick_tim
-  ovis_description
 )
 
 ## System dependencies are found with CMake's conventions
