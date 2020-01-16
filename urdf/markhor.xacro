@@ -11,12 +11,12 @@
     <xacro:property name="link_gb_fr_origin_rpy" value="0 0 0"/>
     <xacro:property name="link_gb_rl_mesh" value="mk_gb_fr"/>
     <xacro:property name="link_gb_rr_mesh" value="mk_gb_fl"/>
-    <xacro:property name="link_gb_material" value="grey"/>
+    <xacro:property name="link_gb_material" value="Grey"/>
     <xacro:property name="link_flip_fl_mesh" value="mk_flip"/>
     <xacro:property name="link_flip_fr_mesh" value="mk_flip"/>
     <xacro:property name="link_flip_rl_mesh" value="mk_flip"/>
     <xacro:property name="link_flip_rr_mesh" value="mk_flip"/>
-    <xacro:property name="link_flip_material" value="black"/>
+    <xacro:property name="link_flip_material" value="Black"/>
 
     <xacro:property name="joint_base" value="joint_base"/>
     <xacro:property name="joint_base_type" value="fixed"/>

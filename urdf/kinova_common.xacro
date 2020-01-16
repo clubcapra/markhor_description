@@ -18,7 +18,7 @@
   <xacro:include filename="$(find markhor_description)/urdf/markhor_inertial.xacro" />
   <xacro:include filename="$(find markhor_description)/urdf/materials.xacro"/>
 
-  <xacro:macro name="kinova_link" params="link_name link_mesh link_origin_xyz:='0 0 0' link_origin_rpy:='0 0 0' link_material:='red' has_collision_mesh:=false">
+  <xacro:macro name="kinova_link" params="link_name link_mesh link_origin_xyz:='0 0 0' link_origin_rpy:='0 0 0' link_material:='Red' has_collision_mesh:=false">
     <link name="${link_name}">
       <visual>
         <geometry>
@@ -26,6 +26,9 @@
         </geometry>
         <origin xyz="${link_origin_xyz}" rpy="${link_origin_rpy}"/>
         <material name="${link_material}"/>
+        <gazebo reference="${link_name}">
+          <material>Gazebo/${link_material}</material>
+        </gazebo>
       </visual>
       <collision>
         <geometry>

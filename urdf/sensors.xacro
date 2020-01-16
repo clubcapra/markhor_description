@@ -1,0 +1,47 @@
+<root xmlns:xi="http://www.w3.org/2001/XInclude" 
+  xmlns:gazebo="http://playerstage.sourceforge.net/gazebo/xmlschema/#gz" 
+  xmlns:model="http://playerstage.sourceforge.net/gazebo/xmlschema/#model" 
+  xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor" 
+  xmlns:body="http://playerstage.sourceforge.net/gazebo/xmlschema/#body" 
+  xmlns:geom="http://playerstage.sourceforge.net/gazebo/xmlschema/#geom" 
+  xmlns:joint="http://playerstage.sourceforge.net/gazebo/xmlschema/#joint" 
+  xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller" 
+  xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface" 
+  xmlns:rendering="http://playerstage.sourceforge.net/gazebo/xmlschema/#rendering" 
+  xmlns:renderable="http://playerstage.sourceforge.net/gazebo/xmlschema/#renderable" 
+  xmlns:physics="http://playerstage.sourceforge.net/gazebo/xmlschema/#physics" 
+  xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="IMU" params="robot_name parent">
+    <link name="${robot_name}_IMU"/>
+    <joint name="imu_joint" type="fixed">
+      <parent link="${parent}"/>
+      <child link="${robot_name}_IMU"/>
+      <origin xyz="0 0 -0.003175" rpy="0 0 0"/>
+      <axis xyz="0 0 1"/>
+      <limit effort="0" lower="0" upper="0" velocity="0"/>
+    </joint>
+    <!-- IMU -->
+    <gazebo reference="${robot_name}_IMU">
+      <gravity>true</gravity>
+      <sensor name="vectornav" type="imu">
+        <always_on>true</always_on>
+        <update_rate>20</update_rate>
+        <visualize>true</visualize>
+        <topic>${robot_name}/simulation/IMU</topic>
+        <pose>0 0 0 0 0 0</pose>
+
+        <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+          <topicName>${robot_name}/simulation/IMU</topicName>
+          <bodyName>imu_link</bodyName>
+          <updateRateHZ>5.0</updateRateHZ>
+          <gaussianNoise>0.0</gaussianNoise>
+          <xyzOffset>0 0 0</xyzOffset>
+          <rpyOffset>0 0 0</rpyOffset>
+          <frameName>${robot_name}_IMU</frameName>
+        </plugin>
+      </sensor>
+    </gazebo>
+  </xacro:macro>
+
+</root>
