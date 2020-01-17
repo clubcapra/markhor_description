@@ -6,7 +6,7 @@ This package is a support package for the markhor robot.
 
 
 ## Dependecies
-This package requires clubcapra/ovis_description
+This package requires [clubcapra/ovis_description](https://github.com/clubcapra/ovis_description)
 
 ## To test with RViz
 
